@@ -9,11 +9,11 @@
 		<version>2.1.2.RELEASE</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.spring.currency.conversion.microservice</groupId>
+	<groupId>com.currency.conversion.services</groupId>
 	<artifactId>currency-conversion-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>currency-conversion-service</name>
-	<description>currency exchange service</description>
+	<description>currency conversion service</description>
 
 	<properties>
 		<java.version>1.8</java.version>
@@ -44,6 +44,20 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+		<!--Feign Client Dependency -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-openfeign</artifactId>
+		</dependency>
+
+		<!-- Dependency for Client Load Balancing -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-ribbon</artifactId>
+			<version>1.4.6.RELEASE</version>
+		</dependency>
+
 	</dependencies>
 
 	<dependencyManagement>
