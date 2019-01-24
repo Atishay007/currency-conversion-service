@@ -34,6 +34,12 @@
 			<artifactId>spring-cloud-starter-config</artifactId>
 		</dependency>
 
+		<!-- To gave unique ID to every request. -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-sleuth</artifactId>
+		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
@@ -57,6 +63,13 @@
 			<artifactId>spring-cloud-starter-ribbon</artifactId>
 			<version>1.4.6.RELEASE</version>
 		</dependency>
+
+		<!--Dependency to make this client of eureka naming server -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+		</dependency>
+
 
 	</dependencies>
 

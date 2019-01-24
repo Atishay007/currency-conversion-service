@@ -4,6 +4,8 @@ import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,6 +19,8 @@ import com.currency.conversion.services.proxy.CurrencyExchangeServiceProxy;
 @RestController
 public class CurrencyConversionController {
 
+	private static final Logger LOGGER=LoggerFactory.getLogger(CurrencyConversionController.class);
+	
 	@Autowired
 	private CurrencyExchangeServiceProxy exchServiceProxy;
 
@@ -59,6 +63,8 @@ public class CurrencyConversionController {
 		// Getting currency conversion details from responseEntity.
 		CurrencyConversionDTO currencyConvResp = exchServiceProxy.getCurrencyExchangeValue(from, to);
 
+		LOGGER.info("{}",currencyConvResp);
+		
 		return new CurrencyConversionDTO(currencyConvResp.getId(), currencyConvResp.getFrom(), currencyConvResp.getTo(),
 				qty, currencyConvResp.getPort(), currencyConvResp.getConversionMultiple(),
 				qty.multiply(currencyConvResp.getConversionMultiple()));
