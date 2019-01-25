@@ -18,6 +18,9 @@ import com.currency.conversion.services.dto.CurrencyConversionDTO;
 public interface CurrencyExchangeServiceProxy {
 
 	//@GetMapping("/exchangeService/from/{from}/to/{to}")
+	//Syntax to call frm ZUUL API gateway is:
+	//1. Use Application name first like below we have used currency-exchange-service.
+	//Then URI of the REST or resource.
 	@GetMapping("currency-exchange-service/exchangeService/from/{from}/to/{to}")
 	public CurrencyConversionDTO getCurrencyExchangeValue(@PathVariable("from") String from,
 			@PathVariable("to") String to);
