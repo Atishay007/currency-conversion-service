@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Bean;
 
 import brave.sampler.Sampler;
 
+//@SpringBootApplication(exclude = { JmsAutoConfiguration.class, JmxAutoConfiguration.class })
 @SpringBootApplication
 //This will enable the feign client functionality.
 @EnableFeignClients(basePackages = { "com.currency.conversion.services.proxy" })
